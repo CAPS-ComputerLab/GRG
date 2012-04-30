@@ -269,18 +269,18 @@
       <ellipse rx="86.0938" fill="none" ry="33.24" clip-path="url(#clipPath2)" cx="3170.127" cy="576.1186"/>
     </g>
     <g fill="rgb(218,114,69)" transform="matrix(1,0,0,1,-353,1080)" stroke="rgb(218,114,69)">
-      <path d="M3360.2961 -369.7893 L3373.9072 -403.0294 L3482.7688 -403.0294 L3496.3801 -369.7893 L3482.7688 -336.5493 L3373.9072 -336.5493 Z" clip-path="url(#clipPath2)" fill-rule="evenodd" stroke="none"/>
+      <path d="M3360.3022 -369.7893 L3373.9102 -403.0293 L3482.7732 -403.0293 L3496.3811 -369.7893 L3482.7732 -336.5493 L3373.9102 -336.5493 Z" clip-path="url(#clipPath2)" fill-rule="evenodd" stroke="none"/>
     </g>
     <g font-size="20" stroke-miterlimit="1.45" font-family="sans-serif" transform="matrix(1,0,0,1,-353,1080)" stroke-linecap="butt">
       <text x="3384.4502" xml:space="preserve" y="-361.9329" clip-path="url(#clipPath2)" stroke="none">GRGCDS</text>
-      <path fill="none" d="M3360.2961 -369.7893 L3373.9072 -403.0294 L3482.7688 -403.0294 L3496.3801 -369.7893 L3482.7688 -336.5493 L3373.9072 -336.5493 Z" fill-rule="evenodd" clip-path="url(#clipPath2)"/>
+      <path fill="none" d="M3360.3022 -369.7893 L3373.9102 -403.0293 L3482.7732 -403.0293 L3496.3811 -369.7893 L3482.7732 -336.5493 L3373.9102 -336.5493 Z" fill-rule="evenodd" clip-path="url(#clipPath2)"/>
     </g>
     <g fill="rgb(200,194,222)" transform="matrix(1,0,0,1,-353,1080)" stroke="rgb(200,194,222)">
-      <path d="M3176.4197 -201.0303 L3269.6997 -240.9523 L3362.98 -201.0303 L3269.6997 -161.1083 Z" clip-path="url(#clipPath2)" fill-rule="evenodd" stroke="none"/>
+      <path d="M3176.4197 -201.0305 L3269.6953 -240.9523 L3362.9712 -201.0305 L3269.6953 -161.1086 Z" clip-path="url(#clipPath2)" fill-rule="evenodd" stroke="none"/>
     </g>
     <g font-size="20" stroke-miterlimit="1.45" font-family="sans-serif" transform="matrix(1,0,0,1,-353,1080)" stroke-linecap="butt">
       <text x="3217.4736" xml:space="preserve" y="-193.174" clip-path="url(#clipPath2)" stroke="none">GRGMRNA</text>
-      <path fill="none" d="M3176.4197 -201.0303 L3269.6997 -240.9523 L3362.98 -201.0303 L3269.6997 -161.1083 Z" fill-rule="evenodd" clip-path="url(#clipPath2)"/>
+      <path fill="none" d="M3176.4197 -201.0305 L3269.6953 -240.9523 L3362.9712 -201.0305 L3269.6953 -161.1086 Z" fill-rule="evenodd" clip-path="url(#clipPath2)"/>
     </g>
     <g fill="rgb(17,74,150)" transform="matrix(1,0,0,1,-353,1080)" stroke="rgb(17,74,150)">
       <circle r="45.8869" clip-path="url(#clipPath2)" cx="3240.3878" cy="12.8916" stroke="none"/>
@@ -306,11 +306,11 @@
       <circle fill="none" r="51.4753" clip-path="url(#clipPath2)" cx="3037.5053" cy="-730.1981"/>
     </g>
     <g fill="rgb(218,114,69)" transform="matrix(1,0,0,1,-353,1080)" stroke="rgb(218,114,69)">
-      <path d="M3427.3755 25.5384 L3440.9832 -7.7016 L3549.8462 -7.7016 L3563.4541 25.5384 L3549.8462 58.7784 L3440.9832 58.7784 Z" clip-path="url(#clipPath2)" fill-rule="evenodd" stroke="none"/>
+      <path d="M3427.3757 25.5384 L3440.9836 -7.7016 L3549.8467 -7.7016 L3563.4546 25.5384 L3549.8467 58.7784 L3440.9836 58.7784 Z" clip-path="url(#clipPath2)" fill-rule="evenodd" stroke="none"/>
     </g>
     <g font-size="20" stroke-miterlimit="1.45" font-family="sans-serif" transform="matrix(1,0,0,1,-353,1080)" stroke-linecap="butt">
       <text x="3451.5237" xml:space="preserve" y="33.3949" clip-path="url(#clipPath2)" stroke="none">GRGCDS</text>
-      <path fill="none" d="M3427.3755 25.5384 L3440.9832 -7.7016 L3549.8462 -7.7016 L3563.4541 25.5384 L3549.8462 58.7784 L3440.9832 58.7784 Z" fill-rule="evenodd" clip-path="url(#clipPath2)"/>
+      <path fill="none" d="M3427.3757 25.5384 L3440.9836 -7.7016 L3549.8467 -7.7016 L3563.4546 25.5384 L3549.8467 58.7784 L3440.9836 58.7784 Z" fill-rule="evenodd" clip-path="url(#clipPath2)"/>
       <path fill="none" d="M531.2069 230.5766 L647.847 195.3775" clip-path="url(#clipPath2)"/>
       <path d="M523.548 232.8879 L536.4808 234.2078 L532.1642 230.2877 L533.5918 224.6342 Z" clip-path="url(#clipPath2)" stroke="none"/>
       <path fill="none" d="M671.5616 306.0073 L531.6023 267.0599" clip-path="url(#clipPath2)"/>
@@ -405,7 +405,7 @@
       <text x="2573.2371" xml:space="preserve" font-size="12" y="462.3827" clip-path="url(#clipPath2)" stroke="none">GRGGENE_CHROMOSOME</text>
       <path fill="none" d="M3430.5327 -687.9549 L3154.1536 -568.2274" clip-path="url(#clipPath2)"/>
       <path d="M3146.8127 -565.0473 L3159.8115 -565.2294 L3155.071 -568.6248 L3155.8364 -574.4053 Z" clip-path="url(#clipPath2)" stroke="none"/>
-      <text x="3320.218" xml:space="preserve" font-size="12" y="-624.3693" clip-path="url(#clipPath2)" stroke="none">GENOME_ELEMENT_CHROMSOME</text>
+      <text x="3320.218" xml:space="preserve" font-size="12" y="-624.3693" clip-path="url(#clipPath2)" stroke="none">GENOME_ELEMENT_CHROMOSOME</text>
       <path fill="none" d="M2546.7134 -644.7604 L2953.707 -548.9014" clip-path="url(#clipPath2)"/>
       <path d="M2961.4939 -547.0674 L2950.9597 -554.6853 L2952.7336 -549.1307 L2948.6672 -544.9516 Z" clip-path="url(#clipPath2)" stroke="none"/>
       <text x="2796.9343" xml:space="preserve" font-size="12" y="-591.4049" clip-path="url(#clipPath2)" stroke="none">PROMOTER_CHROMOSOME</text>
@@ -428,6 +428,7 @@
       <text x="3076.3179" xml:space="preserve" font-size="12" y="439.4378" clip-path="url(#clipPath2)" stroke="none">CIS_ELEMENT_CHROMOSOME</text>
       <path fill="none" d="M3370.1814 -393.9657 L3123.8618 -496.3571" clip-path="url(#clipPath2)"/>
       <path d="M3116.4746 -499.4279 L3125.6362 -490.2048 L3124.7852 -495.9733 L3129.4746 -499.4388 Z" clip-path="url(#clipPath2)" stroke="none"/>
+      <text x="3286.4736" xml:space="preserve" font-size="12" y="-435.0613" clip-path="url(#clipPath2)" stroke="none">GRGCDS_CHROMOSOME</text>
       <path fill="none" d="M3249.0891 -232.0869 L3085.5906 -478.5024" clip-path="url(#clipPath2)"/>
       <path d="M3081.1675 -485.1685 L3083.6357 -472.405 L3086.1433 -477.6692 L3091.9683 -477.9337 Z" clip-path="url(#clipPath2)" stroke="none"/>
       <text x="3172.3799" xml:space="preserve" font-size="12" y="-358.3639" clip-path="url(#clipPath2)" stroke="none">GRGMRNA_CHROMOSOME</text>
