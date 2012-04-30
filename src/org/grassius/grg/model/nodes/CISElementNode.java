@@ -17,7 +17,14 @@
 package org.grassius.grg.model.nodes;
 
 import com.era7.bioinfo.bioinfoneo4j.BasicEntity;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+import org.grassius.grg.model.relationships.CisElementChromosomeRel;
+import org.grassius.grg.model.relationships.CisElementPromoterRel;
+import org.neo4j.graphdb.Direction;
 import org.neo4j.graphdb.Node;
+import org.neo4j.graphdb.Relationship;
 
 /**
  *
@@ -46,6 +53,24 @@ public class CISElementNode extends BasicEntity{
         }else{
             return false;
         }
+    }
+    
+    public ChromosomeNode getChromosome() {
+        ChromosomeNode chr = null;
+        Relationship rel = node.getSingleRelationship(new CisElementChromosomeRel(null), Direction.OUTGOING);
+        if (rel != null) {
+            chr = new ChromosomeNode(rel.getEndNode());
+        }
+        return chr;
+    }
+    
+    public List<PromoterNode> getPromoters() {
+        List<PromoterNode> list = new LinkedList<PromoterNode>();
+        Iterator<Relationship> iterator = node.getRelationships(new CisElementPromoterRel(null), Direction.OUTGOING).iterator();
+        while(iterator.hasNext()){
+            list.add(new PromoterNode(iterator.next().getEndNode()));
+        }
+        return list;
     }
 
 }
