@@ -29,6 +29,7 @@ import org.neo4j.graphdb.Relationship;
 public class GRGCDSNode extends BasicEntity{
 
     public static final String NODE_TYPE = GRGCDSNode.class.getCanonicalName();
+    public static final String GRGCDS_ID_INDEX = "grg_cds_id_index";
 
     public static final String ID_PROPERTY = "id";
     public static final String START_POSITION_PROPERTY = "start_position";

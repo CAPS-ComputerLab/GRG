@@ -29,7 +29,7 @@ public class GRGManager extends Neo4jManager {
     //-----------------node indexes-----------------------
     private Index<Node> nodeTypeIndex = null;
     private Index<Node> gRGGeneIdIndex = null;
-    private Index<Node> cDSIdIndex = null;
+    private Index<Node> grgCDSIdIndex = null;
     private Index<Node> gRGMRNAIdIndex = null;
     private Index<Node> exonIdIndex = null;
     private Index<Node> intronIdIndex = null;
@@ -80,7 +80,7 @@ public class GRGManager extends Neo4jManager {
     private void initializeIndexes(Map<String, String> indexProps, Map<String, String> indexFullTextProps) {
         //----------node indexes-----------
         nodeTypeIndex = graphService.index().forNodes(NODE_TYPE_INDEX_NAME, indexProps);
-        //gRGGeneIdIndex = graphService.index().forNodes(GRGGeneNode.)
+        gRGGeneIdIndex = graphService.index().forNodes(GRGGeneNode.GRGGENE_ID_INDEX);
     }
     
      private static synchronized boolean firstTimeCalled() {
@@ -108,5 +108,30 @@ public class GRGManager extends Neo4jManager {
         indexFullTextProps.put(TYPE_ST, FULL_TEXT_ST);
         
         return indexFullTextProps;
+    }
+    
+    public Index<Node> getNodeTypeIndex() {
+        return nodeTypeIndex;
+    }
+    public Index<Node> getGRGGeneIdIndex() {
+        return gRGGeneIdIndex;
+    }
+    public Index<Node> getGRGCDSIdIndex() {
+        return grgCDSIdIndex;
+    }
+    public Index<Node> getGRGMRNAIdIndex() {
+        return gRGMRNAIdIndex;
+    }
+    public Index<Node> getExonIdIndex() {
+        return exonIdIndex;
+    }
+    public Index<Node> getIntronIdIndex() {
+        return intronIdIndex;
+    }
+    public Index<Node> getCISElementIdIndex(){
+        return cISElementIdIndex;
+    }
+    public Index<Node> getPromoterIdIndex(){
+        return promoterIdIndex;
     }
 }
