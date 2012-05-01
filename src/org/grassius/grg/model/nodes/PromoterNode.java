@@ -33,11 +33,18 @@ import org.neo4j.graphdb.Relationship;
 public class PromoterNode extends BasicEntity{
 
     public static final String NODE_TYPE = PromoterNode.class.getCanonicalName();
+    public static final String PROMOTER_ID_INDEX = "promoter_id_index";
+    
+    public static final String ID_PROPERTY = "id";
 
 
     public PromoterNode(Node n){
         super(n);
     }
+    
+    public String getId(){   return String.valueOf(node.getProperty(ID_PROPERTY));}
+    
+    public void setId(String value){ node.setProperty(ID_PROPERTY, value);}
 
 
     @Override

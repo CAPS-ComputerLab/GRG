@@ -29,6 +29,7 @@ import org.neo4j.graphdb.Relationship;
 public class IntronNode extends BasicEntity{
 
     public static final String NODE_TYPE = IntronNode.class.getCanonicalName();
+    public static final String INTRON_ID_INDEX = "intron_id_index";
 
     public static final String ID_PROPERTY = "id";
     public static final String START_POSITION_PROPERTY = "start_position";

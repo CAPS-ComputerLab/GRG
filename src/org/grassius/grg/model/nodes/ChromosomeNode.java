@@ -40,11 +40,18 @@ import org.neo4j.graphdb.Relationship;
 public class ChromosomeNode extends BasicEntity{
 
     public static final String NODE_TYPE = ChromosomeNode.class.getCanonicalName();
+    public static final String CHROMOSOME_ID_INDEX = "chromoshome_id_index";
+    
+    public static final String ID_PROPERTY = "id";
 
 
     public ChromosomeNode(Node n){
         super(n);
     }
+    
+    public String getId(){   return String.valueOf(node.getProperty(ID_PROPERTY));}
+    
+    public void setId(String value){ node.setProperty(ID_PROPERTY, value);}
 
 
     @Override

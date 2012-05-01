@@ -29,6 +29,7 @@ import org.neo4j.graphdb.Relationship;
 public class ExonNode extends BasicEntity{
 
     public static final String NODE_TYPE = ExonNode.class.getCanonicalName();
+    public static final String EXON_ID_INDEX = "exon_id_index";
 
     public static final String ID_PROPERTY = "id";
     public static final String START_POSITION_PROPERTY = "start_position";

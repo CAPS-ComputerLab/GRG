@@ -33,11 +33,18 @@ import org.neo4j.graphdb.Relationship;
 public class CISElementNode extends BasicEntity{
 
     public static final String NODE_TYPE = CISElementNode.class.getCanonicalName();
+    public static final String CIS_ELEMENT_ID_INDEX = "cis_element_id_index";
+    
+    public static final String ID_PROPERTY = "id";
 
 
     public CISElementNode(Node n){
         super(n);
     }
+    
+    public String getId(){   return String.valueOf(node.getProperty(ID_PROPERTY));}
+    
+    public void setId(String value){ node.setProperty(ID_PROPERTY, value);}
 
 
     @Override
