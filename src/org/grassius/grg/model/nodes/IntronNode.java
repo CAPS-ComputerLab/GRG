@@ -17,7 +17,10 @@
 package org.grassius.grg.model.nodes;
 
 import com.era7.bioinfo.bioinfoneo4j.BasicEntity;
+import org.grassius.grg.model.relationships.IntronChromosomeRel;
+import org.neo4j.graphdb.Direction;
 import org.neo4j.graphdb.Node;
+import org.neo4j.graphdb.Relationship;
 
 /**
  *
@@ -60,6 +63,15 @@ public class IntronNode extends BasicEntity{
         }else{
             return false;
         }
+    }
+    
+    public ChromosomeNode getChromosome() {
+        ChromosomeNode chr = null;
+        Relationship rel = node.getSingleRelationship(new IntronChromosomeRel(null), Direction.OUTGOING);
+        if (rel != null) {
+            chr = new ChromosomeNode(rel.getEndNode());
+        }
+        return chr;
     }
 
 }
