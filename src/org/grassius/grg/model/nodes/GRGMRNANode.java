@@ -22,6 +22,7 @@ import java.util.LinkedList;
 import java.util.List;
 import org.grassius.grg.model.relationships.ExonGRGMRNARel;
 import org.grassius.grg.model.relationships.GRGMRNAChromosomeRel;
+import org.grassius.grg.model.relationships.GRGMRNAGRGGeneRel;
 import org.grassius.grg.model.relationships.IntronGRGMRNARel;
 import org.neo4j.graphdb.Direction;
 import org.neo4j.graphdb.Node;
@@ -78,6 +79,15 @@ public class GRGMRNANode extends BasicEntity{
             chr = new ChromosomeNode(rel.getEndNode());
         }
         return chr;
+    }
+    
+    public GRGGeneNode getGRGGene(){
+        GRGGeneNode gene = null;
+        Relationship rel = node.getSingleRelationship(new GRGMRNAGRGGeneRel(null), Direction.OUTGOING);
+        if (rel != null) {
+            gene = new GRGGeneNode(rel.getEndNode());
+        }
+        return gene;
     }
     
     public List<ExonNode> getExons(){
