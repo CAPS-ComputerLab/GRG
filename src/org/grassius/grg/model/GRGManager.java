@@ -35,6 +35,7 @@ public class GRGManager extends Neo4jManager {
     private Index<Node> intronIdIndex = null;
     private Index<Node> cISElementIdIndex = null;
     private Index<Node> promoterIdIndex = null;
+    private Index<Node> chromosomeIdIndex = null;
     
     
     /**
@@ -133,5 +134,8 @@ public class GRGManager extends Neo4jManager {
     }
     public Index<Node> getPromoterIdIndex(){
         return promoterIdIndex;
+    }
+    public Index<Node> getChrosomeIdIndex(){
+        return chromosomeIdIndex;
     }
 }

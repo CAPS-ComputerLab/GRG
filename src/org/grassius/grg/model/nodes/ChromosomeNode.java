@@ -22,12 +22,9 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import org.grassius.grg.model.relationships.CisElementChromosomeRel;
-import org.grassius.grg.model.relationships.ExonChromosomeRel;
-import org.grassius.grg.model.relationships.GRGCDSChromosomeRel;
 import org.grassius.grg.model.relationships.GRGGeneChromosomeRel;
 import org.grassius.grg.model.relationships.GRGMRNAChromosomeRel;
 import org.grassius.grg.model.relationships.GenomeElementChromosomeRel;
-import org.grassius.grg.model.relationships.IntronChromosomeRel;
 import org.grassius.grg.model.relationships.PromoterChromosomeRel;
 import org.neo4j.graphdb.Direction;
 import org.neo4j.graphdb.Node;
@@ -69,22 +66,6 @@ public class ChromosomeNode extends BasicEntity{
         }
     }
     
-    public List<ExonNode> getExons(){
-        List<ExonNode> list = new LinkedList<ExonNode>();
-        Iterator<Relationship> iterator =  this.getNode().getRelationships(new ExonChromosomeRel(null), Direction.INCOMING).iterator();
-        while(iterator.hasNext()){
-            list.add(new ExonNode(iterator.next().getStartNode()));
-        }        
-        return list;
-    }
-    public List<IntronNode> getIntrons(){
-        List<IntronNode> list = new LinkedList<IntronNode>();
-        Iterator<Relationship> iterator =  this.getNode().getRelationships(new IntronChromosomeRel(null), Direction.INCOMING).iterator();
-        while(iterator.hasNext()){
-            list.add(new IntronNode(iterator.next().getStartNode()));
-        }        
-        return list;
-    }
     public List<GRGGeneNode> getGRGGenes(){
         List<GRGGeneNode> list = new LinkedList<GRGGeneNode>();
         Iterator<Relationship> iterator =  this.getNode().getRelationships(new GRGGeneChromosomeRel(null), Direction.INCOMING).iterator();
@@ -98,14 +79,6 @@ public class ChromosomeNode extends BasicEntity{
         Iterator<Relationship> iterator =  this.getNode().getRelationships(new GRGMRNAChromosomeRel(null), Direction.INCOMING).iterator();
         while(iterator.hasNext()){
             list.add(new GRGMRNANode(iterator.next().getStartNode()));
-        }        
-        return list;
-    }
-    public List<GRGCDSNode> getCDSs(){
-        List<GRGCDSNode> list = new LinkedList<GRGCDSNode>();
-        Iterator<Relationship> iterator =  this.getNode().getRelationships(new GRGCDSChromosomeRel(null), Direction.INCOMING).iterator();
-        while(iterator.hasNext()){
-            list.add(new GRGCDSNode(iterator.next().getStartNode()));
         }        
         return list;
     }

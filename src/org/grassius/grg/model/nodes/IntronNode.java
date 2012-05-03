@@ -3,7 +3,7 @@
  *
  * This file is part of GRG
  *
- * Bio4j is free software: you can redistribute it and/or modify
+ * GRG is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as
  * published by the Free Software Foundation, either version 3 of the
  * License, or (at your option) any later version.
@@ -17,7 +17,7 @@
 package org.grassius.grg.model.nodes;
 
 import com.era7.bioinfo.bioinfoneo4j.BasicEntity;
-import org.grassius.grg.model.relationships.IntronChromosomeRel;
+import org.grassius.grg.model.relationships.IntronGRGMRNARel;
 import org.neo4j.graphdb.Direction;
 import org.neo4j.graphdb.Node;
 import org.neo4j.graphdb.Relationship;
@@ -66,13 +66,13 @@ public class IntronNode extends BasicEntity{
         }
     }
     
-    public ChromosomeNode getChromosome() {
-        ChromosomeNode chr = null;
-        Relationship rel = node.getSingleRelationship(new IntronChromosomeRel(null), Direction.OUTGOING);
+    public GRGMRNANode getGRGMRNA() {
+        GRGMRNANode mrna = null;
+        Relationship rel = node.getSingleRelationship(new IntronGRGMRNARel(null), Direction.OUTGOING);
         if (rel != null) {
-            chr = new ChromosomeNode(rel.getEndNode());
+            mrna = new GRGMRNANode(rel.getEndNode());
         }
-        return chr;
+        return mrna;
     }
 
 }

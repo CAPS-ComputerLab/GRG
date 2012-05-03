@@ -3,7 +3,7 @@
  *
  * This file is part of GRG
  *
- * Bio4j is free software: you can redistribute it and/or modify
+ * GRG is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as
  * published by the Free Software Foundation, either version 3 of the
  * License, or (at your option) any later version.
@@ -17,7 +17,12 @@
 package org.grassius.grg.model.nodes;
 
 import com.era7.bioinfo.bioinfoneo4j.BasicEntity;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+import org.grassius.grg.model.relationships.ExonGRGMRNARel;
 import org.grassius.grg.model.relationships.GRGMRNAChromosomeRel;
+import org.grassius.grg.model.relationships.IntronGRGMRNARel;
 import org.neo4j.graphdb.Direction;
 import org.neo4j.graphdb.Node;
 import org.neo4j.graphdb.Relationship;
@@ -73,6 +78,23 @@ public class GRGMRNANode extends BasicEntity{
             chr = new ChromosomeNode(rel.getEndNode());
         }
         return chr;
+    }
+    
+    public List<ExonNode> getExons(){
+        List<ExonNode> list = new LinkedList<ExonNode>();
+        Iterator<Relationship> iterator =  this.getNode().getRelationships(new ExonGRGMRNARel(null), Direction.INCOMING).iterator();
+        while(iterator.hasNext()){
+            list.add(new ExonNode(iterator.next().getStartNode()));
+        }        
+        return list;
+    }
+    public List<IntronNode> getIntrons(){
+        List<IntronNode> list = new LinkedList<IntronNode>();
+        Iterator<Relationship> iterator =  this.getNode().getRelationships(new IntronGRGMRNARel(null), Direction.INCOMING).iterator();
+        while(iterator.hasNext()){
+            list.add(new IntronNode(iterator.next().getStartNode()));
+        }        
+        return list;
     }
 
 }
