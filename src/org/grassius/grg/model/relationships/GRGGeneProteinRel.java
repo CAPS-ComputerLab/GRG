@@ -23,11 +23,11 @@ import org.neo4j.graphdb.Relationship;
  *
  * @author Pablo Pareja Tobes <ppareja@era7.com>
  */
-public class PromoterChromosomeRel extends BasicRelationship{
+public class GRGGeneProteinRel extends BasicRelationship{
 
-    public static final String NAME = "PROMOTER_CHROMOSOME";
+    public static final String NAME = "GRGGENE_PROTEIN";
 
-    public PromoterChromosomeRel(Relationship rel){
+    public GRGGeneProteinRel(Relationship rel){
         super(rel);
     }
 
