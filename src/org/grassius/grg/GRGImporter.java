@@ -32,6 +32,7 @@ import org.grassius.grg.model.GRGManager;
 import org.grassius.grg.model.GRGNodeRetriever;
 import org.grassius.grg.model.nodes.ChromosomeNode;
 import org.grassius.grg.model.nodes.GRGGeneNode;
+import org.grassius.grg.model.nodes.GRGMRNANode;
 import org.grassius.grg.model.relationships.GRGGeneChromosomeRel;
 import org.grassius.grg.model.relationships.GRGGeneProteinRel;
 import org.neo4j.graphdb.Transaction;
@@ -141,12 +142,15 @@ public class GRGImporter implements Executable {
                     if(elementTypeSt.equals("gene")){
                         
                         String geneID = descriptionColumns[0].split("ID=")[1];
+                        String geneName = descriptionColumns[1].split("Name=")[1];
                         System.out.println("geneID = " + geneID);
                         
                         //-----------creating node------
                         GRGGeneNode gRGGeneNode = new GRGGeneNode(gRGManager.createNode(GRGGeneNode.NODE_TYPE));
                         gRGGeneNode.setEndPosition(endPosition);
                         gRGGeneNode.setStartPosition(startPosition);
+                        gRGGeneNode.setStrand(strandSt);
+                        gRGGeneNode.setName(geneName);
                         gRGGeneNode.setId(geneID);
                         //---------indexing node----------
                         gRGManager.getGRGGeneIdIndex().add(gRGGeneNode.getNode(), GRGGeneNode.GRGGENE_ID_INDEX, geneID);
@@ -173,6 +177,7 @@ public class GRGImporter implements Executable {
                     else if(elementTypeSt.equals("CDS")){
                         
                         String elementId = descriptionColumns[0].split("ID=PAC")[1].substring(1);
+                        String parentSt = descriptionColumns[1].split("Parent=PAC")[1].substring(1);
                         //System.out.println("CDS: elementId = " + elementId);
                         
                     }
@@ -180,7 +185,16 @@ public class GRGImporter implements Executable {
                     else if(elementTypeSt.equals("mRNA")){
                         
                         String elementId = descriptionColumns[0].split("ID=PAC")[1].substring(1);
+                        String mRNAName = descriptionColumns[1].split("Name=")[1];
                         //System.out.println("mRNA: elementId = " + elementId);
+                        
+                        //------creating node-----
+                        GRGMRNANode gRGMRNANode = new GRGMRNANode(gRGManager.createNode(GRGMRNANode.NODE_TYPE));
+                        gRGMRNANode.setId(elementId);
+                        gRGMRNANode.setName(mRNAName);
+                        gRGMRNANode.setStartPosition(startPosition);
+                        gRGMRNANode.setEndPosition(endPosition);
+                        gRGMRNANode.setStrand(strandSt);
                         
                     }
                     //----------------------EXON--------------------------
