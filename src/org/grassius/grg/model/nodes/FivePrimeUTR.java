@@ -16,7 +16,6 @@
  */
 package org.grassius.grg.model.nodes;
 
-import com.era7.bioinfo.bioinfoneo4j.BasicEntity;
 import org.grassius.grg.model.relationships.ExonFivePrimeUTRRel;
 import org.neo4j.graphdb.Direction;
 import org.neo4j.graphdb.Node;
@@ -26,7 +25,7 @@ import org.neo4j.graphdb.Relationship;
  *
  * @author Pablo Pareja Tobes <ppareja@era7.com>
  */
-public class FivePrimeUTR extends BasicEntity{
+public class FivePrimeUTR extends GRGElement{
     
     public static final String NODE_TYPE = FivePrimeUTR.class.getCanonicalName();
     

@@ -26,30 +26,15 @@ import org.neo4j.graphdb.Relationship;
  *
  * @author Pablo Pareja Tobes <ppareja@era7.com>
  */
-public class IntronNode extends BasicEntity{
+public class IntronNode extends GRGElement{
 
     public static final String NODE_TYPE = IntronNode.class.getCanonicalName();
     public static final String INTRON_ID_INDEX = "intron_id_index";
-
-    public static final String ID_PROPERTY = "id";
-    public static final String START_POSITION_PROPERTY = "start_position";
-    public static final String END_POSITION_PROPERTY = "end_position";
 
 
     public IntronNode(Node n){
         super(n);
     }
-
-
-    public String getId(){   return String.valueOf(node.getProperty(ID_PROPERTY));}
-    public int getStartPosition(){  return Integer.parseInt(String.valueOf(node.getProperty(START_POSITION_PROPERTY)));}
-    public int getEndPosition(){  return Integer.parseInt(String.valueOf(node.getProperty(END_POSITION_PROPERTY)));}
-
-
-    public void setId(String value){ node.setProperty(ID_PROPERTY, value);}
-    public void setStartPosition(int value){ node.setProperty(START_POSITION_PROPERTY, value);}
-    public void setEndPosition(int value){ node.setProperty(END_POSITION_PROPERTY, value);}
-
 
     @Override
     public int hashCode(){
