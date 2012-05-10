@@ -31,8 +31,12 @@ import java.util.logging.SimpleFormatter;
 import org.grassius.grg.model.GRGManager;
 import org.grassius.grg.model.GRGNodeRetriever;
 import org.grassius.grg.model.nodes.ChromosomeNode;
+import org.grassius.grg.model.nodes.ExonNode;
+import org.grassius.grg.model.nodes.FivePrimeUTR;
+import org.grassius.grg.model.nodes.GRGCDSNode;
 import org.grassius.grg.model.nodes.GRGGeneNode;
 import org.grassius.grg.model.nodes.GRGMRNANode;
+import org.grassius.grg.model.nodes.ThreePrimeUTRNode;
 import org.grassius.grg.model.relationships.GRGGeneChromosomeRel;
 import org.grassius.grg.model.relationships.GRGGeneProteinRel;
 import org.neo4j.graphdb.Transaction;
@@ -180,6 +184,13 @@ public class GRGImporter implements Executable {
                         String parentSt = descriptionColumns[1].split("Parent=PAC")[1].substring(1);
                         //System.out.println("CDS: elementId = " + elementId);
                         
+                        //------creating node-----
+                        GRGCDSNode gRGCDSNode = new GRGCDSNode(gRGManager.createNode(GRGCDSNode.NODE_TYPE));
+                        gRGCDSNode.setId(elementId);
+                        gRGCDSNode.setStartPosition(startPosition);
+                        gRGCDSNode.setEndPosition(endPosition);
+                        gRGCDSNode.setStrand(strandSt);
+                        
                     }
                     //----------------------mRNA--------------------------
                     else if(elementTypeSt.equals("mRNA")){
@@ -201,16 +212,35 @@ public class GRGImporter implements Executable {
                     else if (elementTypeSt.equals("exon")){
                         String elementId = descriptionColumns[0].split("ID=PAC")[1].substring(1);
                         //System.out.println("exon: elementId = " + elementId);
+                        
+                        //------creating node-----
+                        ExonNode exonNode = new ExonNode(gRGManager.createNode(ExonNode.NODE_TYPE));
+                        exonNode.setId(elementId);
+                        exonNode.setStartPosition(startPosition);
+                        exonNode.setEndPosition(endPosition);
+                        exonNode.setStrand(strandSt);
                     }
                     //----------------------FIVE PRIME UTR--------------------------
                     else if (elementTypeSt.equals("five_prime_UTR")){
                         String elementId = descriptionColumns[0].split("ID=PAC")[1].substring(1);
                         //System.out.println("five_prime_UTR: elementId = " + elementId);
+                        
+                        FivePrimeUTR fivePrimeUTR = new FivePrimeUTR(gRGManager.createNode(FivePrimeUTR.NODE_TYPE));
+                        fivePrimeUTR.setId(elementId);
+                        fivePrimeUTR.setStartPosition(startPosition);
+                        fivePrimeUTR.setEndPosition(endPosition);
+                        fivePrimeUTR.setStrand(strandSt);
                     }
                     //----------------------THREE PRIME UTR--------------------------
                     else if(elementTypeSt.equals("three_prime_UTR")){
                         String elementId = descriptionColumns[0].split("ID=PAC")[1].substring(1);
                         //System.out.println("three_prime_UTR: elementId = " + elementId);
+                        
+                        ThreePrimeUTRNode threePrimeUTRNode = new ThreePrimeUTRNode(gRGManager.createNode(ThreePrimeUTRNode.NODE_TYPE));
+                        threePrimeUTRNode.setId(elementId);
+                        threePrimeUTRNode.setStartPosition(startPosition);
+                        threePrimeUTRNode.setEndPosition(endPosition);
+                        threePrimeUTRNode.setStrand(strandSt);
                     }
                     
                     
