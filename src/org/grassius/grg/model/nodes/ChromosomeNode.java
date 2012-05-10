@@ -24,7 +24,7 @@ import java.util.List;
 import org.grassius.grg.model.relationships.CisElementChromosomeRel;
 import org.grassius.grg.model.relationships.GRGGeneChromosomeRel;
 import org.grassius.grg.model.relationships.GRGMRNAChromosomeRel;
-import org.grassius.grg.model.relationships.GenomeElementChromosomeRel;
+import org.grassius.grg.model.relationships.ChromosomeNCBITaxonRel;
 import org.grassius.grg.model.relationships.PromoterChromosomeRel;
 import org.neo4j.graphdb.Direction;
 import org.neo4j.graphdb.Node;
@@ -40,6 +40,7 @@ public class ChromosomeNode extends BasicEntity{
     public static final String CHROMOSOME_ID_INDEX = "chromoshome_id_index";
     
     public static final String ID_PROPERTY = "id";
+    public static final String LENGTH_PROPERTY = "length";
 
 
     public ChromosomeNode(Node n){
@@ -47,8 +48,10 @@ public class ChromosomeNode extends BasicEntity{
     }
     
     public String getId(){   return String.valueOf(node.getProperty(ID_PROPERTY));}
+    public int getLength(){  return Integer.parseInt(String.valueOf(node.getProperty(LENGTH_PROPERTY)));}
     
     public void setId(String value){ node.setProperty(ID_PROPERTY, value);}
+    public void setLength(int value){   node.setProperty(LENGTH_PROPERTY, value);}
 
 
     @Override
@@ -100,7 +103,7 @@ public class ChromosomeNode extends BasicEntity{
     }
     public GenomeElementNode getGenomeElement(){
         GenomeElementNode genomeElementNode = null;
-        Iterator<Relationship> iterator = this.getNode().getRelationships(new GenomeElementChromosomeRel(null), Direction.INCOMING).iterator();
+        Iterator<Relationship> iterator = this.getNode().getRelationships(new ChromosomeNCBITaxonRel(null), Direction.INCOMING).iterator();
         if(iterator.hasNext()){
             genomeElementNode = new GenomeElementNode(iterator.next().getStartNode());
         }
