@@ -4,7 +4,7 @@
  */
 package org.grassius.grg.model;
 
-import com.era7.bioinfo.bioinfoneo4j.Neo4jManager;
+import com.era7.bioinfo.bio4jmodel.util.Bio4jManager;
 import java.util.HashMap;
 import java.util.Map;
 import org.grassius.grg.model.nodes.GRGGeneNode;
@@ -15,7 +15,7 @@ import org.neo4j.graphdb.index.Index;
  *
  * @author Pablo Pareja Tobes <ppareja@era7.com>
  */
-public class GRGManager extends Neo4jManager {
+public class GRGManager extends Bio4jManager {
     
     private static boolean alreadyCreated = false;
     private static String PROVIDER_ST = "provider";
@@ -23,9 +23,7 @@ public class GRGManager extends Neo4jManager {
     private static String FULL_TEXT_ST = "fulltext";
     private static String LUCENE_ST = "lucene";
     private static String TYPE_ST = "type";
-    
-    public static final String NODE_TYPE_INDEX_NAME = "node_type_index";
-    
+        
     //-----------------node indexes-----------------------
     private Index<Node> nodeTypeIndex = null;
     private Index<Node> gRGGeneIdIndex = null;
@@ -43,7 +41,7 @@ public class GRGManager extends Neo4jManager {
      * @param dbFolder
      */
     public GRGManager(String dbFolder) {
-        super(dbFolder, firstTimeCalled(), false, null);       
+        super(dbFolder);
 
         initializeIndexes(getIndexProps(), getIndexFullTextProps());
         
@@ -56,7 +54,7 @@ public class GRGManager extends Neo4jManager {
      * @param dbFolder
      */
     public GRGManager(String dbFolder, String configFile, boolean readOnlyMode) {
-        super(dbFolder, firstTimeCalled(), readOnlyMode, configFile);       
+        super(dbFolder, configFile, readOnlyMode);       
 
         initializeIndexes(getIndexProps(), getIndexFullTextProps());
         
@@ -70,7 +68,7 @@ public class GRGManager extends Neo4jManager {
      */
     public GRGManager(String dbFolder, boolean createUnderlyingService, boolean readOnlyMode) {
         
-        super(dbFolder, createUnderlyingService, readOnlyMode, null);       
+        super(dbFolder, createUnderlyingService, readOnlyMode);      
 
         initializeIndexes(getIndexProps(), getIndexFullTextProps());
         
