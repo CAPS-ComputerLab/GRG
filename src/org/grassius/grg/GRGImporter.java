@@ -147,8 +147,7 @@ public class GRGImporter implements Executable {
                         
                         String geneID = descriptionColumns[0].split("ID=")[1];
                         String geneName = descriptionColumns[1].split("Name=")[1];
-                        System.out.println("geneID = " + geneID);
-                        
+                                                
                         //-----------creating node------
                         GRGGeneNode gRGGeneNode = new GRGGeneNode(gRGManager.createNode(GRGGeneNode.NODE_TYPE));
                         gRGGeneNode.setEndPosition(endPosition);
@@ -169,7 +168,7 @@ public class GRGImporter implements Executable {
                         }
                         
                         geneCounter++;
-                        if(geneCounter % 10000 == 0){
+                        if(geneCounter % 1000 == 0){
                             txn.success();
                             txn.finish();
                             System.out.println(geneCounter + " genes imported!");
